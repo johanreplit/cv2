@@ -13,7 +13,6 @@ nama_file = "foto"
 
 #Nomor foto
 nomor_foto = 0
-gambar = pygame.image.load(r"C:\Users\Johan\Downloads\bingkai[1].png")
 #Menyimpan status pengamblan foto
 foto_diambil = False
 foto_timer = 0#Timer menampilkan teks foto
@@ -42,9 +41,7 @@ while True:
     frame_pygame = pygame.transform.scale(frame_pygame, (640, 480))
 
     screen.blit(frame_pygame, (0, 0))
-    bingkai = pygame.transform.scale(gambar, (640,480))
-    screen.blit(bingkai, (0, 0))
-
+    
     text_intruksi = font_small.render("= tekan SPACE untuk mengambil foto", True, (255,255,255))
     screen.blit(text_intruksi, (100, 500))
 
@@ -61,7 +58,7 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 #Simpan foto
-                cv2.imwrite(f"C:\\Users\\Johan\\Downloads\\{nama_file}_{nomor_foto}.jpg",
+                cv2.imwrite(#f"Your Path Location{nama_file}_{nomor_foto}.jpg",
                             cv2.cvtColor(frame_opencv, cv2.COLOR_RGB2BGR))
                 foto_diambil = True
                 foto_timer = pygame.time.get_ticks()
